@@ -13,7 +13,6 @@ import { NasaService } from '../../../services/nasa.service';
 export class ApodComponent {
 readonly #nasaService = inject(NasaService);
   readonly #sanitizer = inject(DomSanitizer);
-
   readonly nasaApod = toSignal(this.#nasaService.getNasaApod(), {
     initialValue: null,
   });

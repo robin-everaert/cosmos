@@ -8,7 +8,7 @@ import { Observable, tap } from 'rxjs';
 
 export class NasaService {
     private readonly http = inject(HttpClient);
-    private readonly NASA_APOD_URL = `https://api.nasa.gov/planetary/apod?api_key=qamRHCliEDOAhhykKUIT8qlwV5dewQpEmBT7OTAM`;
+    private readonly NASA_APOD_URL = `https://api.nasa.gov/planetary/apod?api_key=`;
 
     // Astronomy Picture of the Day (Home)
     getNasaApod(): Observable<any> {
