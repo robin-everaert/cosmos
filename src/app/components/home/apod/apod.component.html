@@ -1,0 +1,32 @@
+@if(loading()) {
+        <div class="d-flex justify-content-center align-items-center mt-5 pt-5">
+            <div class="spinner-border text-success" role="status"></div>
+        </div>
+    }
+<section class="row article-of-the-day-container mt-5"
+*ngIf="nasaApod() as data">
+    <div class="col-12">
+        <h2 class="text-center">Article Of The Day</h2>
+        <h4 class="mt-5">{{ data.title }}</h4>
+        <span class="fst-italic">On {{ data.date }}</span>
+        <!-- Code image -->
+            @if (data.media_type === 'image') {
+            <div class="media-container d-flex justify-content-center align-items-center mt-5 pt-2">
+                <img [src]="data.url" [alt]="'Image of the day: ' + data.title" class="img img-fluid" />
+            </div>
+        <!-- code video -->
+            } @else {
+            <div class="media-container d-flex justify-content-center align-items-center mt-3">
+                <div class="youtube-player">
+                    <iframe
+                    *ngIf="safeVideoUrl()"
+                    [src]="safeVideoUrl()"
+                    frameborder="0"
+                    allowfullscreen
+                    ></iframe>
+                </div>
+            </div>
+            }
+        <p class="text-justify mt-3 mt-md-4 ps-1 pe-1">{{ data.explanation }}</p>
+    </div>
+</section>
