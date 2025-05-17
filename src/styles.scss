@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+// Variables
+$primaryFont: 'Ubuntu', sans-serif;
+$white: #fff;
+
+// Global
+body {
+    font-family: $primaryFont !important;
+}
+// 
+p {
+    font-size: 1.2rem;
+}
+h1 {
+    margin-bottom: 2rem;
+}
+.text-justify {
+    text-align: justify;
+}
